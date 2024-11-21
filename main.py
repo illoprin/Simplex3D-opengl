@@ -3,8 +3,11 @@ from shader_program import ShaderManager
 from player.base_player import Player
 from world.scene import Scene
 from textures import TextureManager
-
 from pathlib import Path
+
+from world_objects.game_object_types import *
+from light.point_light import PointLight
+
 
 class SimplexEngine(mglw.WindowConfig):
     resource_dir = (Path(__file__).parent / 'assets').resolve()
@@ -39,6 +42,23 @@ class SimplexEngine(mglw.WindowConfig):
 
         self.scene = Scene(self.ctx, self.program, self.program.programs['axis'])
 
+        # Add scene objects (debug)
+
+        self.scene.add_s(TestLevel())
+        self.scene.add_s(Cube_N(pos=(25, -4, 0), rot=(0, -90, 0), texture=1))
+        self.scene.add_s(Sphere(pos=(25, -4, 4), rot=(0, 180, 0), texture=4))
+
+        self.scene.static_ls = [
+            PointLight((0, 0, 0), (0.41, 0.43, .47), 10.0, 5, intensity=1),
+            PointLight((14, 0, 15), (0.41, 0.35, .23), 7.0, 5, intensity=1),
+        ]
+        self.blue_light = PointLight((23, -1, 2), (0.41, 0.35, .65), 7.0, 2, intensity=1)
+        self.scene.add_dl(self.blue_light)
+        #############################
+
+        # scene needs batch before render
+        self.scene.batch()
+
 
     def render(self, time, frametime):
         self.time = time
@@ -49,6 +69,7 @@ class SimplexEngine(mglw.WindowConfig):
         self.update_scene()
 
         # write render code here
+        self.blue_light.set_position([23, -1, 2 + glm.sin(self.time)*2.35])
         self.scene.render(self.time)
 
     def update_scene(self):
