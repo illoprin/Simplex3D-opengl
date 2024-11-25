@@ -1,7 +1,6 @@
 import math
 import glm
 import moderngl as mgl
-import moderngl_window as mglw
 import numpy as np
 import pyrr
 
@@ -36,3 +35,6 @@ H_FOV = 2 * math.tan(math.atan(V_FOV / 2) * ASPECT)
 NEAR_CLIP = 0.1
 FAR_CLIP = 1000.0
 MAX_PITCH = math.pi / 2
+
+PATH_SCREENSHOTS = 'screenshots'
+PATH_CACHE = 'cache'

@@ -41,7 +41,7 @@ class Scene:
         self.dynamic_ls.append(d_light)
 
     # Render func can be called after appying all changes to the scene
-    def render(self, time):
+    def render(self, time=0):
         # render scene with all changes
         self.batcher.render()
 

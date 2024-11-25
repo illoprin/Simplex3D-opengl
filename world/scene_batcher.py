@@ -207,3 +207,5 @@ class SceneBatcher():
 
         if self.debug:
             [vao.release() for instances, vao in self.d_vaos]
+
+        print('Scene Batcher: All VAOs cleared')
