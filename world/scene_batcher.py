@@ -18,7 +18,7 @@ class SceneBatcher():
         self.go_dynamic = []
 
 
-        self.debug = False
+        self.debug = True
 
     def batch_lights(self, static_lights, dynamic_lights):
         self.dynamic_lights = dynamic_lights

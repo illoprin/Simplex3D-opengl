@@ -14,12 +14,11 @@ class BaseMesh():
 
 def get_index_based_data(vertices, indices, format_size, type='f4', decrement=0):
     vertex_data = np.array(
-        [vertices[(index-decrement) * format_size : (index-decrement) * format_size + format_size] for index in indices],
+        [vertices[(index - decrement) * format_size : (index - decrement) * format_size + format_size] for index in indices],
         dtype=type
     )
     return vertex_data
 
-@staticmethod
 def load_from_obj(model_name: str):
     file_path = os.path.realpath(f'assets/models/{model_name}.obj')
     name: str = None
