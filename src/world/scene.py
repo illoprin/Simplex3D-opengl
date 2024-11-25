@@ -1,9 +1,9 @@
 import numpy as np
 
-from world.scene_batcher import SceneBatcher
-from world_objects.game_object_types import *
-from shader_program import ShaderManager
-from light.point_light import PointLight
+from src.world.scene_batcher import SceneBatcher
+from src.world_objects.game_object_types import *
+from src.shader_program import ShaderManager
+from src.light.point_light import PointLight
 
 class Scene:
     def __init__ (self, ctx: mgl.Context, program: ShaderManager, debug_program: mgl.Program):

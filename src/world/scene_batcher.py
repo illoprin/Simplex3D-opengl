@@ -1,8 +1,8 @@
-from settings import *
-from mesh.meshes import *
-from world_objects.game_object import GameObject
-from shader_program import ShaderManager
-from world_objects.debug_objects import *
+from src.settings import *
+from src.mesh.meshes import *
+from src.world_objects.game_object import GameObject
+from src.shader_program import ShaderManager
+from src.world_objects.debug_objects import *
 
 class SceneBatcher():
     def __init__(self, ctx: mgl.Context, program: ShaderManager, debug_program: mgl.Program):

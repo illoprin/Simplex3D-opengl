@@ -1,6 +1,6 @@
 import os.path
 
-from settings import *
+from src.settings import *
 
 class BaseMesh():
     name = None

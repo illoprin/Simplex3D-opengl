@@ -1,4 +1,4 @@
-from settings import *
+from src.settings import *
 
 class ShaderManager():
 
@@ -16,10 +16,10 @@ class ShaderManager():
         self.programs[program_name][uniform_name] = value
 
     def load_shader(self, vert, frag):
-        with open(f'shaders/{vert}.vert') as file:
+        with open(f'src/shaders/{vert}.vert') as file:
             vertex_shader = file.read()
 
-        with open(f'shaders/{frag}.frag') as file:
+        with open(f'src/shaders/{frag}.frag') as file:
             fragment_shader = file.read()
 
         program = self.ctx.program(vertex_shader=vertex_shader, fragment_shader=fragment_shader)

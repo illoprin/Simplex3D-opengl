@@ -1,5 +1,5 @@
-from settings import *
-from shader_program import ShaderManager
+from src.settings import *
+from src.shader_program import ShaderManager
 
 class PointLight:
     def __init__(self, position=(0, 0, 0), color=(1, 1, 1), radius=5.3, specular=10, intensity=1):

@@ -1,14 +1,13 @@
-from settings import *
-from shader_program import ShaderManager
-from player.base_player import Player
-from world.scene import Scene
-from textures import TextureManager
-
 from PIL import Image
 from datetime import datetime
 
-from world_objects.game_object_types import *
-from light.point_light import PointLight
+from src.settings import *
+from src.shader_program import ShaderManager
+from src.player.base_player import Player
+from src.world.scene import Scene
+from src.textures import TextureManager
+from src.world_objects.game_object_types import *
+from src.light.point_light import PointLight
 
 class SimplexEngine():
 	def __init__(self, ctx, app):
@@ -83,6 +82,8 @@ class SimplexEngine():
 		self.blue_light.set_position([23, -1, 2 + glm.sin(self.time)*2.35])
 		#######################
 		# RENDERING
+		# set clear color
+		self.ctx.clear(*CLEAR_COLOR)
 		self.scene.render(self.time)
 
 	def take_screenshot(self):
@@ -97,7 +98,3 @@ class SimplexEngine():
 		self.scene.clear()
 		self.program.clear()
 		self.main_fbo.release()
-
-
-
-

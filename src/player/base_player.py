@@ -1,5 +1,5 @@
-from settings import *
-from player.camera import Camera
+from src.settings import *
+from src.player.camera import Camera
 
 class Player(Camera):
     def __init__(self, app, program: mgl.Program, position = (0, 0, 0), rotation=glm.vec2(0, -90)):
@@ -39,7 +39,7 @@ class Player(Camera):
         if self.states.get(self.wnd.keys.E):
             self.move_down(self.velocity)
 
-    def handle_event(self, action, key):
+    def handle_speed_modifer(self, action, key):
         if action == self.wnd.keys.ACTION_PRESS:
             if key in self.states:
                 self.states[key] = True

@@ -1,4 +1,4 @@
-from settings import *
+from src.settings import *
 
 class Camera():
     def __init__(self, program):

@@ -1,8 +1,8 @@
 import glm
 
-from settings import *
-from world_objects.game_object import GameObject
-from mesh.meshes import *
+from src.settings import *
+from src.world_objects.game_object import GameObject
+from src.mesh.meshes import *
 
 
 class Cube(GameObject):

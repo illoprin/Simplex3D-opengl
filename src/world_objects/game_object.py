@@ -1,5 +1,5 @@
-from settings import *
-from mesh.base_mesh import BaseMesh
+from src.settings import *
+from src.mesh.base_mesh import BaseMesh
 
 class GameObject():
     def __init__(self, pos=(0,0,0), rot=(0,0,0), scl=(1,1,1), m_model=glm.mat4(1.0), texture=0):

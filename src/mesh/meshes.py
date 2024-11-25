@@ -1,8 +1,8 @@
 import numpy as np
 
-from settings import *
-from mesh.base_mesh import *
-from mesh.primitives import *
+from src.settings import *
+from src.mesh.base_mesh import *
+from src.mesh.primitives import *
 
 class CubeMesh(BaseMesh):
     name = "mesh.Cube"

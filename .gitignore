@@ -2,10 +2,10 @@
 __pycache__
 tests
 TODO.txt
-mesh/__pycache__
-player/__pycache__
-world/__pycache__
-world_objects/__pycache__
-light/__pycache__
+src/mesh/__pycache__
+src/player/__pycache__
+src/world/__pycache__
+src/world_objects/__pycache__
+src/light/__pycache__
 screenshots
 cache

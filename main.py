@@ -1,7 +1,8 @@
-from engine import SimplexEngine
 import moderngl_window as mglw
 from pathlib import Path
-from settings import *
+
+from src.settings import *
+from src.engine import SimplexEngine
 
 
 class SimplexView(mglw.WindowConfig):
@@ -15,10 +16,6 @@ class SimplexView(mglw.WindowConfig):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.time = .001
-        self.delta_time = .001
-        self.fps = 1
-
         # control setup
         self.wnd.mouse_exclusivity = True
 
@@ -37,15 +34,13 @@ class SimplexView(mglw.WindowConfig):
             if key == self.wnd.keys.F5:
                 self.engine.take_screenshot()
 
-        self.engine.player.handle_event(action, key)
+        self.engine.player.handle_speed_modifer(action, key)
 
     def mouse_position_event(self, x, y, dx, dy):
         if self.wnd.mouse_exclusivity:
             self.engine.player.handle_rotation(dx, -dy)
 
     def render(self, time, frametime):
-        # set clear color
-        self.ctx.clear(*CLEAR_COLOR)
         self.engine.update(time, frametime)
         self.engine.render()
 
