@@ -47,9 +47,8 @@ def build_texture_array(load_path, array_filename, file_format='jpg', tex_size=2
 	texture_paths = [
 		item for item in pathlib.Path(load_path).rglob(f'*.{file_format}') if item.is_file()
 	]
-	texture_paths = sorted(
-		texture_paths,
-		key=lambda tex_path: int(re.search('\\d+', str(tex_path)).group(0))
+	texture_paths.sort(
+		key=lambda file: int(re.search(r'\d+', file.name).group())
 	)
 	print (*texture_paths)
 
